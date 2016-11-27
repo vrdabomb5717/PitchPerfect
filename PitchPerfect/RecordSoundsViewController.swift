@@ -16,10 +16,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
+    @IBOutlet var audioPlayButtons: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
+
+        for audioPlayButton in audioPlayButtons {
+            audioPlayButton.imageView?.contentMode = .scaleAspectFit
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
